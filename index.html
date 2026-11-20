@@ -49,6 +49,7 @@ h1{font-size:clamp(46px,7.2vw,88px);line-height:.92;font-weight:850;letter-spaci
 .m{width:14px;height:14px;border-radius:50%;display:inline-block}
 .m.merged{background:var(--sat)}
 .m.open{border:2px solid var(--ink)}
+.m.closed{background:#C2C9D3}
 .m.rev{border-radius:3px;background:var(--ink)}
 .m.art{border-radius:3px;border:2px solid var(--slate)}
 .legend{display:flex;flex-wrap:wrap;gap:4px 16px;font-size:13px;color:var(--slate);margin-top:14px;padding-top:12px;border-top:1px solid var(--rule)}
@@ -212,13 +213,15 @@ footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:10px}
       <div class="lrow"><span>Cashu coco</span><span class="marks"><i class="m merged" title="#608 merged"></i><i class="m open" title="#640 open"></i></span></div>
       <div class="lrow"><span>Fungi Protocol</span><span class="marks"><i class="m merged"></i><i class="m merged"></i><i class="m open"></i><i class="m merged"></i><i class="m merged"></i></span></div>
       <div class="lrow"><span>RoboSats</span><span class="marks"><i class="m merged"></i><i class="m open"></i><i class="m merged"></i></span></div>
+      <div class="lrow"><span>Bitcoin Core</span><span class="marks"><i class="m closed" title="#36396 closed"></i></span></div>
       <div class="lrow"><span>developer.bitcoin.org</span><span class="marks"><i class="m open"></i></span></div>
       <div class="lrow"><span>Code reviews</span><span class="marks"><i class="m rev"></i><i class="m rev"></i><i class="m rev"></i><i class="m rev"></i><i class="m rev"></i></span></div>
       <div class="lrow"><span>Articles</span><span class="marks"><i class="m art"></i><i class="m art"></i><i class="m art"></i><i class="m art"></i><i class="m art"></i></span></div>
-      <p class="totals"><b>11 pull requests</b> across 4 projects (7 merged, 4 open), <b>5 code reviews</b> in Bitcoin Core and coco, and <b>5 articles</b>.</p>
+      <p class="totals"><b>12 pull requests</b> across 5 projects (7 merged, 4 open, 1 closed), <b>5 code reviews</b> in Bitcoin Core and coco, and <b>5 articles</b>.</p>
       <div class="legend" aria-hidden="true">
         <span><i class="m merged"></i>Merged PR</span>
         <span><i class="m open"></i>Open PR</span>
+        <span><i class="m closed"></i>Closed PR</span>
         <span><i class="m rev"></i>Review</span>
         <span><i class="m art"></i>Article</span>
       </div>
@@ -294,7 +297,7 @@ footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:10px}
   <div class="wrap">
     <div class="shead">
       <h2 class="st">All pull requests</h2>
-      <p class="sintro">Eleven PRs across four projects, grouped by project.</p>
+      <p class="sintro">Twelve PRs across five projects, grouped by project.</p>
     </div>
 
     <div class="proj">
@@ -322,6 +325,13 @@ footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:10px}
         <li><i class="m merged" aria-label="Merged"></i><a class="num" href="https://github.com/RoboSats/robosats/pull/2829" target="_blank" rel="noopener noreferrer">#2829</a><span class="title">Fix the gettext pin in the LND dev image<span class="when">Opened 3 Oct, merged 4 Nov 2026</span></span></li>
         <li><i class="m open" aria-label="Open"></i><a class="num" href="https://github.com/RoboSats/robosats/pull/2830" target="_blank" rel="noopener noreferrer">#2830</a><span class="title">Move the CLN dev builder image to Debian bookworm so it builds again<span class="when">Opened 3 Oct 2026</span></span></li>
         <li><i class="m merged" aria-label="Merged"></i><a class="num" href="https://github.com/RoboSats/robosats/pull/2831" target="_blank" rel="noopener noreferrer">#2831</a><span class="title">Document LND wallet creation in the dev setup<span class="when">Opened 3 Oct, merged 3 Nov 2026</span></span></li>
+      </ul>
+    </div>
+
+    <div class="proj">
+      <div><h3>Bitcoin Core</h3><p class="note">Functional tests, 1 PR</p></div>
+      <ul class="prs">
+        <li><i class="m closed" aria-label="Closed"></i><a class="num" href="https://github.com/bitcoin/bitcoin/pull/36396" target="_blank" rel="noopener noreferrer">#36396</a><span class="title">Use assert helpers in interface_http.py<span class="when">Opened 30 Sep, closed 1 Oct 2026</span><span class="extra">Suggested in the review of #36324. Closed after reviewers disagreed on the approach. My takeaway: contributions don't always get accepted, even when another PR's conversation suggested the change, and receiving feedback is part of the process.</span></span></li>
       </ul>
     </div>
 
@@ -385,10 +395,10 @@ footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:10px}
       <p class="sintro">What I wrote, and why.</p>
     </div>
     <ul class="arts body">
-      <li><a href="https://medium.com/@ayoazeez26/my-first-contribution-on-coco-69a8fcf3e9ed" target="_blank" rel="noopener noreferrer">My First Contribution on Coco</a><p class="where">Medium</p><p>My reflection on #608: two bugs hidden behind one timeout, the feedback I got, and what I'd do differently.</p></li>
-      <li><a href="https://medium.com/@ayoazeez26/how-to-review-a-pr-in-bitcoin-core-6157d1c04e71" target="_blank" rel="noopener noreferrer">How to Review a PR in Bitcoin Core</a><p class="where">Medium</p><p>I spent over two weeks deep in Bitcoin Core, much of it reviewing PRs, alongside sessions on how to review well. This is the process behind my Core reviews.</p></li>
-      <li><a href="https://medium.com/@ayoazeez26/ptlcs-64e47089dd66" target="_blank" rel="noopener noreferrer">PTLCs</a><p class="where">Medium</p><p>Written from our group research on point time locked contracts. PTLCs are a proposed upgrade to the HTLCs I covered in my timelocks article.</p></li>
-      <li><a href="https://medium.com/@ayoazeez26/timelocks-in-the-lightning-network-70e85cf4f8cb" target="_blank" rel="noopener noreferrer">Timelocks in the Lightning Network</a><p class="where">Medium</p><p>Learning about timelocks fascinated me, so I researched further and wrote it up.</p></li>
+      <li><a href="https://medium.com/@ayoazeez26/my-first-contribution-on-coco-69a8fcf3e9ed" target="_blank" rel="noopener noreferrer">My First Contribution on Coco</a><p class="where">Medium, 20 Nov 2026</p><p>My reflection on #608: two bugs hidden behind one timeout, the feedback I got, and what I'd do differently.</p></li>
+      <li><a href="https://medium.com/@ayoazeez26/ptlcs-64e47089dd66" target="_blank" rel="noopener noreferrer">PTLCs</a><p class="where">Medium, 2 Nov 2026</p><p>Written from our group research on point time locked contracts. PTLCs are a proposed upgrade to the HTLCs I covered in my timelocks article.</p></li>
+      <li><a href="https://medium.com/@ayoazeez26/how-to-review-a-pr-in-bitcoin-core-6157d1c04e71" target="_blank" rel="noopener noreferrer">How to Review a PR in Bitcoin Core</a><p class="where">Medium, 11 Oct 2026</p><p>I spent over two weeks deep in Bitcoin Core, much of it reviewing PRs, alongside sessions on how to review well. This is the process behind my Core reviews.</p></li>
+      <li><a href="https://medium.com/@ayoazeez26/timelocks-in-the-lightning-network-70e85cf4f8cb" target="_blank" rel="noopener noreferrer">Timelocks in the Lightning Network</a><p class="where">Medium, 19 Sep 2026</p><p>Learning about timelocks fascinated me, so I researched further and wrote it up.</p></li>
       <li><a href="https://dev.to/ayoazeez26/segwit-why-we-needed-it-18g8" target="_blank" rel="noopener noreferrer">SegWit: Why We Needed It</a><p class="where">DEV, 4 Sep 2026</p><p>How SegWit moved signatures into the witness to fix transaction malleability, made Lightning workable, and changed how block size is measured.</p></li>
     </ul>
   </div>
