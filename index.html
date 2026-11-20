@@ -210,14 +210,14 @@ footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:10px}
 
     <aside class="ledger" aria-label="Contribution summary">
       <h2>Twelve weeks of work, one mark each</h2>
-      <div class="lrow"><span>Cashu coco</span><span class="marks"><i class="m merged" title="#608 merged"></i><i class="m open" title="#640 open"></i></span></div>
+      <div class="lrow"><span>Cashu coco</span><span class="marks"><i class="m merged" title="#608 merged"></i><i class="m merged" title="#640 merged"></i></span></div>
       <div class="lrow"><span>Fungi Protocol</span><span class="marks"><i class="m merged"></i><i class="m merged"></i><i class="m open"></i><i class="m merged"></i><i class="m merged"></i></span></div>
       <div class="lrow"><span>RoboSats</span><span class="marks"><i class="m merged"></i><i class="m open"></i><i class="m merged"></i></span></div>
       <div class="lrow"><span>Bitcoin Core</span><span class="marks"><i class="m closed" title="#36396 closed"></i></span></div>
       <div class="lrow"><span>developer.bitcoin.org</span><span class="marks"><i class="m open"></i></span></div>
       <div class="lrow"><span>Code reviews</span><span class="marks"><i class="m rev"></i><i class="m rev"></i><i class="m rev"></i><i class="m rev"></i><i class="m rev"></i></span></div>
       <div class="lrow"><span>Articles</span><span class="marks"><i class="m art"></i><i class="m art"></i><i class="m art"></i><i class="m art"></i><i class="m art"></i></span></div>
-      <p class="totals"><b>12 pull requests</b> across 5 projects (7 merged, 4 open, 1 closed), <b>5 code reviews</b> in Bitcoin Core and coco, and <b>5 articles</b>.</p>
+      <p class="totals"><b>12 pull requests</b> across 5 projects (8 merged, 3 open, 1 closed), <b>5 code reviews</b> in Bitcoin Core and coco, and <b>5 articles</b>.</p>
       <div class="legend" aria-hidden="true">
         <span><i class="m merged"></i>Merged PR</span>
         <span><i class="m open"></i>Open PR</span>
@@ -269,7 +269,7 @@ footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:10px}
       <div>
         <a class="prnum" href="https://github.com/cashubtc/coco/pull/640" target="_blank" rel="noopener noreferrer">#640</a>
         <p class="repo">cashubtc/coco</p>
-        <span class="status"><i class="m open"></i>Opened 18 Nov 2026, approved</span>
+        <span class="status"><i class="m merged"></i>Merged 20 Nov 2026</span>
       </div>
       <div>
         <h3>Operation IDs that survive React StrictMode</h3>
@@ -283,7 +283,7 @@ footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:10px}
             <li>Added about 340 lines of hook tests, plus a changeset.</li>
           </ul></dd>
           <dt>Review and iteration</dt>
-          <dd>A reviewer found a race: if <code>execute()</code> finished before the initial read, the late read wiped the result. I confirmed it, made hydration drop its result once any action has started, and added a test that fails without the fix. I kept a suggested <code>fast-check</code> property test for a follow-up, since it adds a dev dependency. The reviewer approved.</dd>
+          <dd>A reviewer found a race: if <code>execute()</code> finished before the initial read, the late read wiped the result. I confirmed it, made hydration drop its result once any action has started, and added a test that fails without the fix. I kept a suggested <code>fast-check</code> property test for a follow-up, since it adds a dev dependency. The reviewer approved, and a maintainer merged it.</dd>
           <dt>Takeaway</dt>
           <dd>With async UI state, the order in which things finish is where bugs hide. Keeping a PR narrow makes it easier to review.</dd>
         </dl>
@@ -304,7 +304,7 @@ footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:10px}
       <div><h3>Cashu coco</h3><p class="note">TypeScript, 2 PRs</p></div>
       <ul class="prs">
         <li><i class="m merged" aria-label="Merged"></i><a class="num" href="https://github.com/cashubtc/coco/pull/608" target="_blank" rel="noopener noreferrer">#608</a><span class="title">Second mint and end-to-end Mint Swap integration test<span class="when">Opened and merged 4 Nov 2026</span></span></li>
-        <li><i class="m open" aria-label="Open"></i><a class="num" href="https://github.com/cashubtc/coco/pull/640" target="_blank" rel="noopener noreferrer">#640</a><span class="title">Hydrate operation IDs under React StrictMode<span class="when">Opened 18 Nov 2026, approved</span></span></li>
+        <li><i class="m merged" aria-label="Merged"></i><a class="num" href="https://github.com/cashubtc/coco/pull/640" target="_blank" rel="noopener noreferrer">#640</a><span class="title">Hydrate operation IDs under React StrictMode<span class="when">Opened 18 Nov, merged 20 Nov 2026</span></span></li>
       </ul>
     </div>
 
@@ -416,7 +416,7 @@ footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:10px}
         <h3>Now</h3>
         <p class="when">Cashu coco</p>
         <ol>
-          <li><strong>Land #640</strong>, and add the <code>fast-check</code> property test in a follow-up if the maintainers want it.</li>
+          <li><strong>Follow up on #640</strong> with the <code>fast-check</code> property test, if the maintainers want it.</li>
           <li><strong>Turn my open #420 findings into PRs</strong> once Mint Swap v1 merges: a linear history scan, deduped history events, a pagination fix, and an <code>AbortSignal.any</code> fallback for React Native.</li>
           <li><strong>Keep reviewing</strong> Mint Swap, history and React-hook PRs.</li>
         </ol>
